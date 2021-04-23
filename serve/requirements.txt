@@ -1,5 +1,5 @@
-argparse
-numpy
 sagemaker_containers
+numpy
+pillow
 torch
 torchvision

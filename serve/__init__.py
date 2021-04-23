@@ -1,2 +1,2 @@
-# train/__init__.py
+# serve/__init__.py
 from .model import CNNClassifier

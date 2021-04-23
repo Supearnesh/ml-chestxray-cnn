@@ -25,5 +25,4 @@ estimator = PyTorch(
 
 estimator.fit({
     'train': bucket+'/train',
-    'test': bucket+'/test'
 })
