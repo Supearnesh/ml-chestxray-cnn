@@ -8,8 +8,8 @@ class CNNClassifier(nn.Module):
     def __init__(self):
         super(CNNClassifier, self).__init__()
         ## Define layers of a CNN
-        # convolutional layer (sees 112x160x1 tensor)
-        self.conv_01 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, stride=1, padding=1)
+        # convolutional layer (sees 112x160x3 tensor)
+        self.conv_01 = nn.Conv2d(in_channels=3, out_channels=16, kernel_size=3, stride=1, padding=1)
         # batch normalization applied to convolutional layer
         self.norm_01 = nn.BatchNorm2d(16)
         # convolutional layer (sees 56x80x16 tensor)
@@ -46,7 +46,7 @@ class CNNClassifier(nn.Module):
         x = self.pool(F.relu(self.norm_04(self.conv_04(x))))
         x = self.pool(F.relu(self.norm_05(self.conv_05(x))))
         # flatten image input
-        x = x.view(-1, 7 * 10 * 256)
+        x = x.view(-1, 1920 * 256)
         # add dropout layer
         x = self.dropout(x)
         # add first hidden layer, with relu activation function
