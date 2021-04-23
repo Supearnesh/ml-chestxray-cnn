@@ -1,0 +1,9 @@
+argparse
+beautifulsoup4
+html5lib
+nltk
+numpy
+pandas
+pytorch_lightning
+torch
+torchvision
