@@ -30,8 +30,8 @@ class CNNClassifier(nn.Module):
         self.norm_05 = nn.BatchNorm2d(256)
         # max pooling layer
         self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
-        # linear layer (7 * 10 * 256 -> 2048)
-        self.fc_01 = nn.Linear(7 * 10 * 256, 2048)
+        # linear layer (15 * 256 -> 2048)
+        self.fc_01 = nn.Linear(15 * 256, 2048)
         # linear layer (2048 -> 2)
         self.fc_02 = nn.Linear(2048, 2)
         # dropout layer (p = 0.50)
@@ -46,7 +46,7 @@ class CNNClassifier(nn.Module):
         x = self.pool(F.relu(self.norm_04(self.conv_04(x))))
         x = self.pool(F.relu(self.norm_05(self.conv_05(x))))
         # flatten image input
-        x = x.view(-1, 1920 * 256)
+        x = x.view(-1, 15 * 256)
         # add dropout layer
         x = self.dropout(x)
         # add first hidden layer, with relu activation function

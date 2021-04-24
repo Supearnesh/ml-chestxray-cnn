@@ -26,14 +26,6 @@ def model_fn(model_dir):
 
     print('Loading model.')
 
-    # First, load the parameters used to create the model
-    model_info = {}
-    model_info_path = os.path.join(model_dir, 'model_info.pth')
-    with open(model_info_path, 'rb') as f:
-        model_info = torch.load(f)
-
-    print('model_info: {}'.format(model_info))
-
     # Determine the device and construct the model
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = CNNClassifier()
@@ -121,7 +113,7 @@ def train(model, loaders, epochs, optimizer, loss_fn, device):
     for epoch in range(1, epochs + 1):
         # initialize variables to monitor training and validation loss
         train_loss = 0.0
-        valid_loss = 0.0
+        val_loss = 0.0
         
         ###################
         # train the model #
@@ -150,7 +142,7 @@ def train(model, loaders, epochs, optimizer, loss_fn, device):
         # validate the model #
         ######################
         model.eval()
-        for batch_idx, (data, target) in enumerate(loaders['valid']):
+        for batch_idx, (data, target) in enumerate(loaders['val']):
             # check if CUDA is available
             use_cuda = torch.cuda.is_available()
             # move tensors to GPU if CUDA is available
@@ -186,8 +178,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Training Parameters
-    parser.add_argument('--batch-size', type=int, default=256, metavar='N',
-                        help='input batch size for training (default: 256)')
+    parser.add_argument('--batch-size', type=int, default=4, metavar='N',
+                        help='input batch size for training (default: 4)')
     parser.add_argument('--epochs', type=int, default=5, metavar='E',
                         help='number of epochs to train (default: 5)')
     parser.add_argument('--seed', type=int, default=1, metavar='S',
@@ -232,11 +224,6 @@ if __name__ == '__main__':
     loss_fn = torch.nn.CrossEntropyLoss()
 
     train(model, train_loader, args.epochs, optimizer, loss_fn, device)
-
-    # Save the parameters used to construct the model
-    model_info_path = os.path.join(args.model_dir, 'model_info.pth')
-    with open(model_info_path, 'wb') as f:
-        torch.save(model_info, f)
 
     # Save the model parameters
     model_path = os.path.join(args.model_dir, 'model.pth')
