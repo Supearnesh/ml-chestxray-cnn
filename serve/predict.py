@@ -111,7 +111,8 @@ def predict_fn(input_data, model):
                            T.Normalize(mean=mean,
                                        std=std)])
 
-    data = transform(input_data)
+    normalized_img = transform(input_data)
+    data = normalized_img.unsqueeze(0)
     data = data.to(device)
  
     # Make sure to put the model into evaluation mode
