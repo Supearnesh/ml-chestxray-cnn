@@ -929,9 +929,9 @@ Chest X-ray 1:
 
 *`img: chestXrays/test/normal/NORMAL2-IM-0035-0001.jpeg*
 
-Model Output: Patient diagnosis is Normal.
-
 <img src="img/normal_diagnosis.png">
+
+Model Output: Patient diagnosis is Normal.
 
 
 
@@ -940,9 +940,9 @@ Chest X-ray 2:
 
 *`img: chestXrays/test/pneumonia/person65_virus_123.jpeg*
 
-Model Output: Patient diagnosis is Pneumonia.
-
 <img src="img/pneumonia_diagnosis.png">
+
+Model Output: Patient diagnosis is Pneumonia.
 
 
 
