@@ -18,8 +18,8 @@ estimator = PyTorch(
     instance_count=1,
     instance_type='ml.p2.xlarge',
     hyperparameters={
-        'epochs': 6,
-        'batch-size': 128
+        'epochs': 25,
+        'batch-size': 1
     }
 )
 

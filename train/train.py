@@ -57,8 +57,7 @@ def _get_data_loaders(batch_size, training_dir, mean, std, val_split):
 
     print('Split dataset for train and val.')
 
-    transform = T.Compose([T.Resize(112),
-                           T.Resize((112, 160)),
+    transform = T.Compose([T.Resize((112, 160)),
                            T.ToTensor(),
                            T.Normalize(mean=mean,
                                        std=std)])

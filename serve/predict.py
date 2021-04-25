@@ -105,8 +105,7 @@ def predict_fn(input_data, model):
     std = (0.0564721,)
 
     # Process input_data so that it is ready to be sent to our model
-    transform = T.Compose([T.Resize(112),
-                           T.Resize((112, 160)),
+    transform = T.Compose([T.Resize((112, 160)),
                            T.ToTensor(),
                            T.Normalize(mean=mean,
                                        std=std)])
