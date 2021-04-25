@@ -14,7 +14,7 @@
   * [Step 1 - Data collection](#step-1---data-collection)
   * [Step 2 - Data cleaning](#step-2---data-cleaning)
   * [Step 3 - Feature labelling](#step-3---feature-labelling)
-  * [Step 4 - Convolutional Neural Network (CNN) architecture](#step-4---convolutional-neural-network--cnn--architecture)
+  * [Step 4 - Convolutional Neural Network (CNN) architecture](#step-4---convolutional-neural-network-cnn-architecture)
   * [Step 5 - Model training](#step-5---model-training)
   * [Step 6 - Deploying the trained model for testing](#step-6---deploying-the-trained-model-for-testing)
   * [Step 7 - Model validation using a batch transform job](#step-7---model-validation-using-a-batch-transform-job)
