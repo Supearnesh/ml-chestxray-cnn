@@ -282,6 +282,11 @@ transform = T.Compose([T.Resize((112, 160)),
 ### Step 4 - Convolutional Neural Network (CNN) architecture
 
 
+CNNs are well-documented for their applicability in solving image classification problems, as that described by Simonyan and Zisserman in their paper, cited below. The results attained by their model showed great promise for other image classification problems and it made sense to take a similar approach, making slight adjustments to the CNN architecture described.
+
+
+> Karen Simonyan and Andrew Zisserman. [Very Deep Convolutional Networks for Large-scale Image Recognition](https://arxiv.org/pdf/1409.1556.pdf). In _Proceedings of ICLR_, 2015.
+
 To give a brief overview on the structure of neural networks, they typically consist of connected nodes organized by layers, with an input layer, an output layer and some number of hidden layers in between. At a very high level, the input layer is responsible for taking in data, the hidden layers apply some changes to that data, and the output layer yields the result. There was one CNN built for this project from scratch. The goal was to understand the architecture of a CNN better by building one from scratch and train it to understand what kind of results are possible for such a model. The following paper was instrumental for developing a firm understanding of CNNs and for learning strategies to increase performance by decreasing overfitting.
 
 
