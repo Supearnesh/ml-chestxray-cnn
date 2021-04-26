@@ -382,7 +382,7 @@ sagemaker_session = sagemaker.Session()
 
 bucket = 's3://chest-xrays'
 
-role = 'arn:aws:iam::578203129999:role/service-role/AmazonSageMaker-ExecutionRole-20200419T032205'  
+role = 'arn:aws:iam::XXXXXXXXXXXX:role/service-role/AmazonSageMaker-ExecutionRole'  
 
 estimator = PyTorch(
     entry_point='train.py',
@@ -500,7 +500,7 @@ estimator.fit({
         "log_level": 20,
         "master_hostname": "algo-1",
         "model_dir": "/opt/ml/model",
-        "module_dir": "s3://sagemaker-us-east-1-578203129999/pytorch-training-2021-04-24-05-21-20-825/source/sourcedir.tar.gz",
+        "module_dir": "s3://sagemaker-us-east-1-XXXXXXXXXXXX/pytorch-training-2021-04-24-05-21-20-825/source/sourcedir.tar.gz",
         "module_name": "train",
         "network_interface_name": "eth0",
         "num_cpus": 4,
@@ -539,8 +539,8 @@ estimator.fit({
     [34mSM_NUM_CPUS=4[0m
     [34mSM_NUM_GPUS=1[0m
     [34mSM_MODEL_DIR=/opt/ml/model[0m
-    [34mSM_MODULE_DIR=s3://sagemaker-us-east-1-578203129999/pytorch-training-2021-04-24-05-21-20-825/source/sourcedir.tar.gz[0m
-    [34mSM_TRAINING_ENV={"additional_framework_parameters":{},"channel_input_dirs":{"training":"/opt/ml/input/data/training"},"current_host":"algo-1","framework_module":"sagemaker_pytorch_container.training:main","hosts":["algo-1"],"hyperparameters":{"batch-size":1,"epochs":25},"input_config_dir":"/opt/ml/input/config","input_data_config":{"training":{"RecordWrapperType":"None","S3DistributionType":"FullyReplicated","TrainingInputMode":"File"}},"input_dir":"/opt/ml/input","is_master":true,"job_name":"pytorch-training-2021-04-24-05-21-20-825","log_level":20,"master_hostname":"algo-1","model_dir":"/opt/ml/model","module_dir":"s3://sagemaker-us-east-1-578203129999/pytorch-training-2021-04-24-05-21-20-825/source/sourcedir.tar.gz","module_name":"train","network_interface_name":"eth0","num_cpus":4,"num_gpus":1,"output_data_dir":"/opt/ml/output/data","output_dir":"/opt/ml/output","output_intermediate_dir":"/opt/ml/output/intermediate","resource_config":{"current_host":"algo-1","hosts":["algo-1"],"network_interface_name":"eth0"},"user_entry_point":"train.py"}[0m
+    [34mSM_MODULE_DIR=s3://sagemaker-us-east-1-XXXXXXXXXXXX/pytorch-training-2021-04-24-05-21-20-825/source/sourcedir.tar.gz[0m
+    [34mSM_TRAINING_ENV={"additional_framework_parameters":{},"channel_input_dirs":{"training":"/opt/ml/input/data/training"},"current_host":"algo-1","framework_module":"sagemaker_pytorch_container.training:main","hosts":["algo-1"],"hyperparameters":{"batch-size":1,"epochs":25},"input_config_dir":"/opt/ml/input/config","input_data_config":{"training":{"RecordWrapperType":"None","S3DistributionType":"FullyReplicated","TrainingInputMode":"File"}},"input_dir":"/opt/ml/input","is_master":true,"job_name":"pytorch-training-2021-04-24-05-21-20-825","log_level":20,"master_hostname":"algo-1","model_dir":"/opt/ml/model","module_dir":"s3://sagemaker-us-east-1-XXXXXXXXXXXX/pytorch-training-2021-04-24-05-21-20-825/source/sourcedir.tar.gz","module_name":"train","network_interface_name":"eth0","num_cpus":4,"num_gpus":1,"output_data_dir":"/opt/ml/output/data","output_dir":"/opt/ml/output","output_intermediate_dir":"/opt/ml/output/intermediate","resource_config":{"current_host":"algo-1","hosts":["algo-1"],"network_interface_name":"eth0"},"user_entry_point":"train.py"}[0m
     [34mSM_USER_ARGS=["--batch-size","1","--epochs","25"][0m
     [34mSM_OUTPUT_INTERMEDIATE_DIR=/opt/ml/output/intermediate[0m
     [34mSM_CHANNEL_TRAINING=/opt/ml/input/data/training[0m
